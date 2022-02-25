@@ -12,3 +12,9 @@ modules = [JModels]
 strict = true
 checkdocs = :none
 makedocs(; sitename, pages, format, modules, strict, checkdocs)
+
+deploydocs(;
+    devbranch="main",
+    repo="github.com/JuliaModels/JModels.jl.git",
+    push_preview=false
+)

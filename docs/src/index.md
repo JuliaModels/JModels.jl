@@ -64,6 +64,7 @@ All the methods listed below are considered public, that is, can be used or exte
 
 ```@docs
 JModels.fit
+JModels.fit!
 JModels.apply
 JModels.ismodel
 JModels.verify_model

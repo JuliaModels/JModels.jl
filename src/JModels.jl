@@ -3,42 +3,42 @@ module JModels
 """
     JModels.fit(t, x; kwargs...)
 
-Return a fitted model of type `t` on data `x`. Implementing this function is encouraged but
+Return a fitted model of type `t` on `data`. Implementing this function is encouraged but
 optional. Without implementing this function, things such as model evaluation where your
 model is `fit`ted and `apply`d multiple times are not possible.
 
 It is advised to assign default values to all keyword arguments. This makes it easier for
 people to compare different models.
 """
-function fit(t, x; kwargs...)
+function fit(t, data; kwargs...)
     _verify_model(t)
-    error("JModels.fit is not implemented for $typeof(m)")
+    error("JModels.fit is not implemented for $t")
 end
 
 """
-    JModels.fit!(m, x; kwargs...)
+    JModels.fit!(model, data; kwargs...)
 
-Fit an existing model `m` on data `x` by mutating `m`. See [`fit`](@ref) for more
+Fit an existing `model` on `data` by mutating `model`. See [`fit`](@ref) for more
 information.
 """
-function fit!(m, x; kwargs...)
-    _verify_model(m)
-    error("JModels.fit! is not implemented for $typeof(m)")
+function fit!(model, data; kwargs...)
+    _verify_model(model)
+    error("JModels.fit! is not implemented for $typeof(model)")
 end
 
 """
-    JModels.apply(m, x; kwargs...)
+    JModels.apply(model, data; kwargs...)
 
-Apply model `m` on data `x`.
+Apply `model` on `data`.
 
 Note that this function would be called `predict` in many machine learning applications. The
 word "predict" implies that the model will estimate a future event. However, it is also
 common to verify a model on (historic) training data. Therefore, to avoid confusion, the name
 "apply" seems more appropriate.
 """
-function apply(m; kwargs...)
-    _verify_model(m)
-    error("JModels.apply is not implemented for $typeof(m)")
+function apply(model, data; kwargs...)
+    _verify_model(model)
+    error("JModels.apply is not implemented for $typeof(model)")
 end
 
 """
@@ -52,9 +52,9 @@ function ismodel end
 ismodel(x) = false
 
 """
-    JModels.verify_model(m)
+    JModels.verify_model(x)
 
-Throw an error if `!ismodel(m)`.
+Throw an error if `!ismodel(x)`.
 """
 function verify_model(m)
     if !ismodel(m)

@@ -1,9 +1,21 @@
 using Documenter
 using JModels
+using PlutoStaticHTML
+
+notebooks = [
+    "GLM"
+]
+
+include("build.jl")
+
+build()
+md_files = markdown_files()
+T = [t => f for (t, f) in zip(notebooks, md_files)]
 
 sitename = "JModels.jl"
 pages = [
-    "JModels" => "index.md"
+    "JModels" => "index.md",
+    "Demos" => T
 ]
 
 prettyurls = get(ENV, "CI", nothing) == "true"

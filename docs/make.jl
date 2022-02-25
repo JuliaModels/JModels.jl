@@ -15,7 +15,7 @@ T = [t => f for (t, f) in zip(notebooks, md_files)]
 sitename = "JModels.jl"
 pages = [
     "JModels" => "index.md",
-    "Demos" => T
+    "Examples" => T
 ]
 
 prettyurls = get(ENV, "CI", nothing) == "true"

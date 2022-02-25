@@ -1,6 +1,7 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 JModels = "93a57881-174c-461c-88c1-3998d887602b"
+PlutoStaticHTML = "359b1769-a58e-495b-9770-312e911026ad"
 
 [compat]
 Documenter = "0.27"

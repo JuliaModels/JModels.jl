@@ -29,7 +29,7 @@ using GLM: AbstractGLM
 md"""
 # GLM
 
-This page demonstrates an example implementation of the JModels interface for GLM and applies GLM via the interface.
+This page demonstrates an example implementation of the `JModels.jl` interface for `GLM.jl` and applies `GLM.jl` via the interface.
 """
 
 # ╔═╡ 1e6c881f-ae0a-4393-ac42-cd212428f20b
@@ -39,8 +39,7 @@ import JModels
 md"""
 ## Implementation of JModels
 
-This is for demonstration purposes.
-In the future, the hope is that an implementation like this would live inside GLM.jl.
+This is an example implementation which could live inside `GLM.jl`.
 """
 
 # ╔═╡ a3dff183-54ae-4215-9f0c-0456bbe9f30b
@@ -81,10 +80,10 @@ JModels.apply(model, data)
 # ╠═4d83954a-0d01-46d2-9a80-09212bbd8c33
 # ╠═79eb61d4-9635-11ec-19d4-7b61646ffe23
 # ╠═f2855237-a2dd-4c11-ad8e-2fa58a0eae9d
-# ╠═1e6c881f-ae0a-4393-ac42-cd212428f20b
 # ╠═84652bbd-f82a-4af3-ab1d-89b9a79da966
 # ╠═04507b23-fb11-43bb-aea0-02f9eddd75c5
 # ╠═75c323c8-9ff5-48e6-923b-0eb02f7ef9df
+# ╠═1e6c881f-ae0a-4393-ac42-cd212428f20b
 # ╠═a3dff183-54ae-4215-9f0c-0456bbe9f30b
 # ╠═369f5d90-f796-44c7-9e6c-f7396078053a
 # ╠═2868f696-a892-47e9-b6c9-9bdf53aeed39

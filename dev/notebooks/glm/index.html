@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>GLM · JModels.jl</title><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.039/juliamono-regular.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">JModels.jl</a></span></div><form class="docs-search" action="../../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../../">JModels</a></li><li><span class="tocitem">Demos</span><ul><li class="is-active"><a class="tocitem" href>GLM</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Demos</a></li><li class="is-active"><a href>GLM</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>GLM</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/JuliaModels/JModels.jl/blob/master/docs/src/notebooks/glm.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><style>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>GLM · JModels.jl</title><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.039/juliamono-regular.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">JModels.jl</a></span></div><form class="docs-search" action="../../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../../">JModels</a></li><li><span class="tocitem">Examples</span><ul><li class="is-active"><a class="tocitem" href>GLM</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Examples</a></li><li class="is-active"><a href>GLM</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>GLM</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/JuliaModels/JModels.jl/blob/master/docs/src/notebooks/glm.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><style>
     table {
         display: table !important;
         margin: 2rem auto !important;
@@ -17,21 +17,18 @@
 <!--
     # This information is used for caching.
     [PlutoStaticHTML.State]
-    input_sha = "a60e2dbcadcaa9569f21fc006fce00254c7c888b9841856618dd97769989db2f"
+    input_sha = "008805d7bb7fb5b880c9bc2fad35de5a4e11a26e3e73676ed148ce6652cd512c"
     julia_version = "1.7.2"
 -->
 
 <div class="markdown"><h1>GLM</h1>
-<p>This page demonstrates an example implementation of the JModels interface for GLM and applies GLM via the interface.</p>
+<p>This page demonstrates an example implementation of the <code>JModels.jl</code> interface for <code>GLM.jl</code> and applies <code>GLM.jl</code> via the interface.</p>
 </div>
 
 
 
 
 
-
-
-<pre class='language-julia'><code class='language-julia'>import JModels</code></pre>
 
 
 <pre class='language-julia'><code class='language-julia'>using GLM</code></pre>
@@ -42,8 +39,11 @@
 
 
 <div class="markdown"><h2>Implementation of JModels</h2>
-<p>This is for demonstration purposes. In the future, the hope is that an implementation like this would live inside GLM.jl.</p>
+<p>This is an example implementation which could live inside <code>GLM.jl</code>.</p>
 </div>
+
+<pre class='language-julia'><code class='language-julia'>import JModels</code></pre>
+
 
 <pre class='language-julia'><code class='language-julia'>function JModels.fit(
         AbstractGLM,
@@ -78,17 +78,17 @@ end</code></pre>
 y ~ 1 + x
 
 Coefficients:
-────────────────────────────────────────────────────────────────────────
-                 Coef.  Std. Error     z  Pr(>|z|)  Lower 95%  Upper 95%
-────────────────────────────────────────────────────────────────────────
-(Intercept)  0.382291      3.11908  0.12    0.9025   -5.73099    6.49557
-x            0.0190222     1.44547  0.01    0.9895   -2.81406    2.8521
-────────────────────────────────────────────────────────────────────────</code></pre>
+─────────────────────────────────────────────────────────────────────────
+                 Coef.  Std. Error      z  Pr(>|z|)  Lower 95%  Upper 95%
+─────────────────────────────────────────────────────────────────────────
+(Intercept)  -2.36668      3.91399  -0.60    0.5454  -10.038      5.3046
+x             0.686525     1.67878   0.41    0.6826   -2.60383    3.97688
+─────────────────────────────────────────────────────────────────────────</code></pre>
 
 <pre class='language-julia'><code class='language-julia'>JModels.apply(model, data)</code></pre>
 <pre id='var-hash752650' class='pre-class'><code class='code-output'>3-element Vector{Union{Missing, Float64}}:
- 0.5990031263271671
- 0.6035635025390527
- 0.6081059466823105</code></pre>
+ 0.1570754998062748
+ 0.2701965918567283
+ 0.42382276531528856</code></pre>
 
-<!-- PlutoStaticHTML.End --></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« JModels</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.13 on <span class="colophon-date" title="Friday 25 February 2022 13:19">Friday 25 February 2022</span>. Using Julia version 1.7.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+<!-- PlutoStaticHTML.End --></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« JModels</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.13 on <span class="colophon-date" title="Friday 25 February 2022 14:59">Friday 25 February 2022</span>. Using Julia version 1.7.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

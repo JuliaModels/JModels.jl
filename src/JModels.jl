@@ -18,8 +18,10 @@ end
 """
     JModels.fit!(model, data; kwargs...)
 
-Fit an existing `model` on `data` by mutating `model`. See [`fit`](@ref) for more
-information.
+Fit an existing `model` on `data` by mutating `model`. In contrast to [`fit`](@ref), this
+method is more flexible in configuring the model since a predefined model can be passed to
+be `fit`ted. Also, this method can offer more performance if the model is trained in
+multiple steps.
 """
 function fit!(model, data; kwargs...)
     _verify_model(model)

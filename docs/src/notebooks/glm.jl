@@ -32,15 +32,15 @@ md"""
 This page demonstrates an example implementation of the `JModels.jl` interface for `GLM.jl` and applies `GLM.jl` via the interface.
 """
 
-# ╔═╡ 1e6c881f-ae0a-4393-ac42-cd212428f20b
-import JModels
-
 # ╔═╡ 75c323c8-9ff5-48e6-923b-0eb02f7ef9df
 md"""
 ## Implementation of JModels
 
 This is an example implementation which could live inside `GLM.jl`.
 """
+
+# ╔═╡ 1e6c881f-ae0a-4393-ac42-cd212428f20b
+import JModels
 
 # ╔═╡ a3dff183-54ae-4215-9f0c-0456bbe9f30b
 function JModels.fit(

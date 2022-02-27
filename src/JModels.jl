@@ -12,7 +12,6 @@ people to compare different models.
 """
 function fit(t, data; kwargs...)
     verify_model(t)
-    @show data
     error("JModels.fit is not implemented for $t")
 end
 
@@ -29,17 +28,22 @@ function fit!(model, data; kwargs...)
     error("JModels.fit! is not implemented for $typeof(model)")
 end
 
-"""
-    JModels.apply(model, data; kwargs...)
+abstract type AbstractMode end
 
-Apply `model` on `data`.
-
-Note that this function would be called `predict` in many machine learning applications. The
-word "predict" implies that the model will estimate a future event. However, it is also
-common to verify a model on (historic) training data. Therefore, to avoid confusion, the name
-"apply" seems more appropriate.
 """
-function apply(model, data; kwargs...)
+    PredictMode
+
+The default mode in which a model operates when applied.
+"""
+struct PredictMode <: AbstractMode end
+
+"""
+    JModels.apply(model, data[, mode::AbstractMode=PredictMode]; kwargs...)
+
+Apply `model` on `data` in `mode`. The extra argument `mode` is needed because some fitted
+models can transform the data in more than one way.
+"""
+function apply(model, data, mode::AbstractMode=PredictMode; kwargs...)
     verify_model(model)
     error("JModels.apply is not implemented for $typeof(model)")
 end

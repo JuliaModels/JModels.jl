@@ -11,7 +11,8 @@ It is advised to assign default values to all keyword arguments. This makes it e
 people to compare different models.
 """
 function fit(t, data; kwargs...)
-    _verify_model(t)
+    verify_model(t)
+    @show data
     error("JModels.fit is not implemented for $t")
 end
 
@@ -24,7 +25,7 @@ be `fit`ted. Also, this method can offer more performance if the model is traine
 multiple steps.
 """
 function fit!(model, data; kwargs...)
-    _verify_model(model)
+    verify_model(model)
     error("JModels.fit! is not implemented for $typeof(model)")
 end
 
@@ -61,7 +62,7 @@ Throw an error if `!ismodel(x)`.
 function verify_model(m)
     if !ismodel(m)
         T = typeof(m)
-        error("JModels.isdata(::$T) = true not implemented for $T which is either a bug or means that $T doesn't satisfy the JModels interface")
+        error("JModels.ismodel(::$T) = true not implemented for $T which is either a bug or means that $T doesn't satisfy the JModels interface")
     end
 end
 

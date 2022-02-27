@@ -40,7 +40,7 @@ common to verify a model on (historic) training data. Therefore, to avoid confus
 "apply" seems more appropriate.
 """
 function apply(model, data; kwargs...)
-    _verify_model(model)
+    verify_model(model)
     error("JModels.apply is not implemented for $typeof(model)")
 end
 

@@ -42,14 +42,17 @@ This is an example implementation which could live inside `GLM.jl`.
 # ╔═╡ 1e6c881f-ae0a-4393-ac42-cd212428f20b
 import JModels
 
+# ╔═╡ 78d45aff-63ff-468d-8ca5-b70669dce442
+JModels.ismodel(AbstractGLM) = true
+
 # ╔═╡ a3dff183-54ae-4215-9f0c-0456bbe9f30b
 function JModels.fit(
-        AbstractGLM,
+        mt::Type{GeneralizedLinearModel},
         data;
         formula=FormulaTerm(term(:y), term(:x)),
         family=Binomial(),
         link=LogitLink()
-    )
+	)
     return glm(formula, data, family, link)
 end
 
@@ -73,6 +76,12 @@ data = (; x = 1:3, y = rand(3));
 # ╔═╡ 1e2e759f-8a1f-43a4-98c7-81dee72f5160
 model = JModels.fit(GeneralizedLinearModel, data)
 
+# ╔═╡ 2631dd68-a858-4675-ab63-42dab18d7cd9
+GeneralizedLinearModel <: AbstractGLM
+
+# ╔═╡ 6987bab0-ffbe-4522-8874-a251e796b9aa
+Type{GeneralizedLinearModel} <: Type{<:AbstractGLM}
+
 # ╔═╡ 14ae9587-e62b-479b-a32b-5686272df916
 JModels.apply(model, data)
 
@@ -84,9 +93,12 @@ JModels.apply(model, data)
 # ╠═04507b23-fb11-43bb-aea0-02f9eddd75c5
 # ╠═75c323c8-9ff5-48e6-923b-0eb02f7ef9df
 # ╠═1e6c881f-ae0a-4393-ac42-cd212428f20b
+# ╠═78d45aff-63ff-468d-8ca5-b70669dce442
 # ╠═a3dff183-54ae-4215-9f0c-0456bbe9f30b
 # ╠═369f5d90-f796-44c7-9e6c-f7396078053a
 # ╠═2868f696-a892-47e9-b6c9-9bdf53aeed39
 # ╠═318832b4-a04c-4709-9783-442da4f4fc9f
 # ╠═1e2e759f-8a1f-43a4-98c7-81dee72f5160
+# ╠═2631dd68-a858-4675-ab63-42dab18d7cd9
+# ╠═6987bab0-ffbe-4522-8874-a251e796b9aa
 # ╠═14ae9587-e62b-479b-a32b-5686272df916

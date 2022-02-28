@@ -17,7 +17,7 @@
 <!--
     # This information is used for caching.
     [PlutoStaticHTML.State]
-    input_sha = "089954474e0612e86e116060dafa00d4ec8accfda5a8848633370c7199a78422"
+    input_sha = "c123517dfe14e57c2b33a62d5f1f15338ba0b500fd0f6acd4eee7ebd991ade98"
     julia_version = "1.7.2"
 -->
 
@@ -54,12 +54,12 @@
         formula=FormulaTerm(term(:y), term(:x)),
         family=Binomial(),
         link=LogitLink()
-	)
+    )
     return glm(formula, data, family, link)
 end</code></pre>
 
 
-<pre class='language-julia'><code class='language-julia'>function JModels.apply(
+<pre class='language-julia'><code class='language-julia'>function JModels.predict(
         model::Union{AbstractGLM,LinearModel,RegressionModel},
         data;
         kwargs...
@@ -81,12 +81,12 @@ end</code></pre>
 y ~ 1 + x
 
 Coefficients:
-─────────────────────────────────────────────────────────────────────────
-                 Coef.  Std. Error      z  Pr(>|z|)  Lower 95%  Upper 95%
-─────────────────────────────────────────────────────────────────────────
-(Intercept)  -1.43931      3.27049  -0.44    0.6599   -7.84935    4.97073
-x             0.921507     1.59599   0.58    0.5637   -2.20657    4.04959
-─────────────────────────────────────────────────────────────────────────</code></pre>
+──────────────────────────────────────────────────────────────────────────
+                  Coef.  Std. Error      z  Pr(>|z|)  Lower 95%  Upper 95%
+──────────────────────────────────────────────────────────────────────────
+(Intercept)   1.09996       3.43003   0.32    0.7484   -5.62277    7.8227
+x            -0.0846613     1.57142  -0.05    0.9570   -3.16458    2.99526
+──────────────────────────────────────────────────────────────────────────</code></pre>
 
 <pre class='language-julia'><code class='language-julia'>GeneralizedLinearModel &lt;: AbstractGLM</code></pre>
 <pre id='var-hash639038' class='pre-class'><code class='code-output'>true</code></pre>
@@ -94,10 +94,10 @@ x             0.921507     1.59599   0.58    0.5637   -2.20657    4.04959
 <pre class='language-julia'><code class='language-julia'>Type{GeneralizedLinearModel} &lt;: Type{&lt;:AbstractGLM}</code></pre>
 <pre id='var-hash666904' class='pre-class'><code class='code-output'>true</code></pre>
 
-<pre class='language-julia'><code class='language-julia'>JModels.apply(model, data)</code></pre>
-<pre id='var-hash752650' class='pre-class'><code class='code-output'>3-element Vector{Union{Missing, Float64}}:
- 0.3733666083276657
- 0.5995778347494777
- 0.7900478153152545</code></pre>
+<pre class='language-julia'><code class='language-julia'>JModels.predict(model, data)</code></pre>
+<pre id='var-hash174962' class='pre-class'><code class='code-output'>3-element Vector{Union{Missing, Float64}}:
+ 0.7340560460610125
+ 0.7172048145018847
+ 0.6997226079776587</code></pre>
 
-<!-- PlutoStaticHTML.End --></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« JModels</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.13 on <span class="colophon-date" title="Sunday 27 February 2022 21:29">Sunday 27 February 2022</span>. Using Julia version 1.7.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+<!-- PlutoStaticHTML.End --></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« JModels</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.13 on <span class="colophon-date" title="Monday 28 February 2022 20:43">Monday 28 February 2022</span>. Using Julia version 1.7.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

@@ -52,12 +52,12 @@ function JModels.fit(
         formula=FormulaTerm(term(:y), term(:x)),
         family=Binomial(),
         link=LogitLink()
-	)
+    )
     return glm(formula, data, family, link)
 end
 
 # ╔═╡ 369f5d90-f796-44c7-9e6c-f7396078053a
-function JModels.apply(
+function JModels.predict(
         model::Union{AbstractGLM,LinearModel,RegressionModel},
         data;
         kwargs...
@@ -83,7 +83,7 @@ GeneralizedLinearModel <: AbstractGLM
 Type{GeneralizedLinearModel} <: Type{<:AbstractGLM}
 
 # ╔═╡ 14ae9587-e62b-479b-a32b-5686272df916
-JModels.apply(model, data)
+JModels.predict(model, data)
 
 # ╔═╡ Cell order:
 # ╠═4d83954a-0d01-46d2-9a80-09212bbd8c33

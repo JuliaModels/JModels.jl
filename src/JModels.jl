@@ -28,24 +28,36 @@ function fit!(model, data; kwargs...)
     error("JModels.fit! is not implemented for $typeof(model)")
 end
 
-abstract type AbstractMode end
-
 """
-    PredictMode
+    JModels.predict(model, data; kwargs...)
 
-The default mode in which a model operates when applied.
+Predict with `model` on `data`. For example, a k-means clustering model can predict target
+labels.
 """
-struct PredictMode <: AbstractMode end
-
-"""
-    JModels.apply(model, data[, mode::AbstractMode=PredictMode]; kwargs...)
-
-Apply `model` on `data` in `mode`. The extra argument `mode` is needed because some fitted
-models can transform the data in more than one way.
-"""
-function apply(model, data, mode::AbstractMode=PredictMode; kwargs...)
+function predict(model, data; kwargs...)
     verify_model(model)
-    error("JModels.apply is not implemented for $typeof(model)")
+    error("JModels.predict is not implemented for $typeof(model)")
+end
+
+"""
+    JModels.transform(model, data; kwargs...)
+
+Transform `data` via `model`. For example, a k-means clustering model reduce
+dimensionality.
+"""
+function transform(model, data; kwargs...)
+    verify_model(model)
+    error("JModels.transform is not implemented for $typeof(model)")
+end
+
+"""
+    JModels.inverse_transform(model, data; kwargs...)
+
+Inversely transform `data` via `model`.
+"""
+function inverse_transform(model, data; kwargs...)
+    verify_model(model)
+    error("JModels.inverse_transform is not implemented for $typeof(model)")
 end
 
 """

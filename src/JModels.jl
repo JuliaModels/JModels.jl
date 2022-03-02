@@ -5,7 +5,7 @@ module JModels
 
 Return a fitted model of type `t` on `data`. Implementing this function is encouraged but
 optional. Without implementing this function, things such as model evaluation where your
-model is `fit`ted and `apply`d multiple times are not possible.
+model is instantiated, `fit`ted and used for prediction multiple times are not possible.
 
 It is advised to assign default values to all keyword arguments. This makes it easier for
 people to compare different models.
@@ -29,35 +29,35 @@ function fit!(model, data; kwargs...)
 end
 
 """
-    JModels.predict(model, data; kwargs...)
+    JModels.predict(fmodel, data; kwargs...)
 
-Predict with `model` on `data`. For example, a k-means clustering model can predict target
+Predict with fitted model `fmodel` on `data`. For example, a k-means clustering model can predict target
 labels.
 """
-function predict(model, data; kwargs...)
-    verify_model(model)
-    error("JModels.predict is not implemented for $typeof(model)")
+function predict(fmodel, data; kwargs...)
+    verify_model(fmodel)
+    error("JModels.predict is not implemented for $typeof(fmodel)")
 end
 
 """
-    JModels.transform(model, data; kwargs...)
+    JModels.transform(fmodel, data; kwargs...)
 
-Transform `data` via `model`. For example, a k-means clustering model reduce
+Transform `data` via fitted model `fmodel`. For example, a k-means clustering model reduce
 dimensionality.
 """
-function transform(model, data; kwargs...)
-    verify_model(model)
-    error("JModels.transform is not implemented for $typeof(model)")
+function transform(fmodel, data; kwargs...)
+    verify_model(fmodel)
+    error("JModels.transform is not implemented for $typeof(fmodel)")
 end
 
 """
-    JModels.inverse_transform(model, data; kwargs...)
+    JModels.inverse_transform(fmodel, data; kwargs...)
 
-Inversely transform `data` via `model`.
+Inversely transform `data` via fitted model `fmodel`.
 """
-function inverse_transform(model, data; kwargs...)
-    verify_model(model)
-    error("JModels.inverse_transform is not implemented for $typeof(model)")
+function inverse_transform(fmodel, data; kwargs...)
+    verify_model(fmodel)
+    error("JModels.inverse_transform is not implemented for $typeof(fmodel)")
 end
 
 """

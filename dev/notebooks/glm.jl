@@ -49,20 +49,22 @@ JModels.ismodel(AbstractGLM) = true
 function JModels.fit(
         mt::Type{GeneralizedLinearModel},
         data;
-        formula=FormulaTerm(term(:y), term(:x)),
-        family=Binomial(),
-        link=LogitLink()
+        settings = (;
+			formula=FormulaTerm(term(:y), term(:x)),
+        	family=Binomial(),
+	        link=LogitLink()
+		)
     )
-    return glm(formula, data, family, link)
+    return glm(settings.formula, data, settings.family, settings.link)
 end
 
 # ╔═╡ 369f5d90-f796-44c7-9e6c-f7396078053a
 function JModels.predict(
         model::Union{AbstractGLM,LinearModel,RegressionModel},
         data;
-        kwargs...
+        settings=NamedTuple()
     )
-    return predict(model, data; kwargs...)
+    return GLM.predict(model, data; settings...)
 end
 
 # ╔═╡ 2868f696-a892-47e9-b6c9-9bdf53aeed39

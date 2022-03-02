@@ -18,14 +18,6 @@ This interface should make it possible to use CV.jl on models defined by organis
 
 and more.
 
-## Related Work
-
-- [LearningStrategies.jl](https://github.com/JuliaML/LearningStrategies.jl) provides an abstract interface for iteratively training a model.
-    Specifically, the package allows for a model `setup!`, iteratively `update!` and a `cleanup!`.
-    It has been the foundation for [IterationControl.jl](https://github.com/JuliaAI/IterationControl.jl).
-- [MLJModelInterface.jl](https://github.com/JuliaAI/MLJModelInterface.jl) provides an interface for statistical models.
-    In comparison, `JModels` assumes less in order to make it easier for packages to satisfy the interface.
-
 ## Model Basics
 
 In the most basic sense, we define a statistical `model` as an object that can be fitted to some random variables:
@@ -42,13 +34,6 @@ predictions = predict(fmodel, data)
 ```
 
 where `data` satisfies the assumptions of `fmodel`.
-
-## Data Definition
-
-This interface makes no assumptions about the datatype.
-It is up to the package who implements the interface to decide what datatypes are allowed although in most cases the [Tables.jl interface](https://juliadata.github.io/Tables.jl/stable/) is the most suitable.
-Note that the Tables interface is not suitable for some statistical models.
-For example, for image classifiers, the data cannot easily be contained in a table.
 
 ## Using the Interface
 
@@ -68,6 +53,29 @@ JModels.verify_model
 
 To become a `JModels.jl` source, the following methods can be implemented; some of which are optional:
 
+### Required
+
+Implementing the following methods is required.
+
 ```@docs
 JModels.ismodel
 ```
+
+### Optional
+
+Implementing the following methods is optional.
+
+## Related Work
+
+- [LearningStrategies.jl](https://github.com/JuliaML/LearningStrategies.jl) provides an abstract interface for iteratively training a model.
+    Specifically, the package allows for a model `setup!`, iteratively `update!` and a `cleanup!`.
+    It has been the foundation for [IterationControl.jl](https://github.com/JuliaAI/IterationControl.jl).
+- [MLJModelInterface.jl](https://github.com/JuliaAI/MLJModelInterface.jl) provides an interface for statistical models.
+    In comparison, `JModels` assumes less in order to make it easier for packages to satisfy the interface.
+
+## Data Definition
+
+This interface makes no assumptions about the datatype.
+It is up to the package who implements the interface to decide what datatypes are allowed although in most cases the [Tables.jl interface](https://juliadata.github.io/Tables.jl/stable/) is the most suitable.
+Note that the Tables interface is not suitable for some statistical models.
+For example, for image classifiers, the data cannot easily be contained in a table.

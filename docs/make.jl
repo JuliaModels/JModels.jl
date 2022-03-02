@@ -3,7 +3,8 @@ using JModels
 using PlutoStaticHTML
 
 notebooks = [
-    "GLM"
+    "GLM",
+    "Logo"
 ]
 
 include("build.jl")
@@ -15,11 +16,12 @@ T = [t => f for (t, f) in zip(notebooks, md_files)]
 sitename = "JModels.jl"
 pages = [
     "JModels" => "index.md",
-    "Examples" => T
+    "Details" => T
 ]
 
 prettyurls = get(ENV, "CI", nothing) == "true"
-format = Documenter.HTML(; prettyurls)
+assets = [ "favicon.ico" ]
+format = Documenter.HTML(; assets, prettyurls)
 modules = [JModels]
 strict = true
 checkdocs = :none

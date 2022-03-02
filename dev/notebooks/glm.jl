@@ -78,12 +78,6 @@ data = (; x = 1:3, y = rand(3));
 # ╔═╡ 1e2e759f-8a1f-43a4-98c7-81dee72f5160
 model = JModels.fit(GeneralizedLinearModel, data)
 
-# ╔═╡ 2631dd68-a858-4675-ab63-42dab18d7cd9
-GeneralizedLinearModel <: AbstractGLM
-
-# ╔═╡ 6987bab0-ffbe-4522-8874-a251e796b9aa
-Type{GeneralizedLinearModel} <: Type{<:AbstractGLM}
-
 # ╔═╡ 14ae9587-e62b-479b-a32b-5686272df916
 JModels.predict(model, data)
 
@@ -101,6 +95,4 @@ JModels.predict(model, data)
 # ╠═2868f696-a892-47e9-b6c9-9bdf53aeed39
 # ╠═318832b4-a04c-4709-9783-442da4f4fc9f
 # ╠═1e2e759f-8a1f-43a4-98c7-81dee72f5160
-# ╠═2631dd68-a858-4675-ab63-42dab18d7cd9
-# ╠═6987bab0-ffbe-4522-8874-a251e796b9aa
 # ╠═14ae9587-e62b-479b-a32b-5686272df916

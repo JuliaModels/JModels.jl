@@ -9,7 +9,10 @@ notebooks = [
 
 include("build.jl")
 
-build()
+# In most cases during development, building the notebooks is not necessary.
+if get(ENV, "CI", "false") == "true"
+    build()
+end
 md_files = markdown_files()
 T = [t => f for (t, f) in zip(notebooks, md_files)]
 
@@ -20,7 +23,7 @@ pages = [
 ]
 
 prettyurls = get(ENV, "CI", nothing) == "true"
-assets = [ "favicon.ico" ]
+assets = [ "assets/favicon.ico" ]
 format = Documenter.HTML(; assets, prettyurls)
 modules = [JModels]
 strict = true

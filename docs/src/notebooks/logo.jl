@@ -19,6 +19,12 @@ end
 # ╔═╡ 59e351d0-8df4-4016-898e-3c4c6f554d17
 using CairoMakie, ColorTypes, JModels
 
+# ╔═╡ a88ccce3-34d3-483f-b313-595bab69ac07
+md"""
+This notebook generates the JModels logo and favicon.
+Credits go to Makie.jl for making it easy to create a nice PNG with a transparent background.
+"""
+
 # ╔═╡ 91ae0221-d73e-44c5-a672-d7e360937e2e
 julia_color = Dict(
 	"blue" => RGB(77/255, 101/255, 175/255),
@@ -54,7 +60,7 @@ logo = let
 end
 
 # ╔═╡ 97d8d81c-0cf1-4102-ab83-0becfad30453
-favicon_path = joinpath(pkgdir(JModels), "docs", "favicon.png");
+favicon_path = joinpath(pkgdir(JModels), "docs", "src", "assets", "favicon.png");
 
 # ╔═╡ 3c461c35-d8d4-4dce-8b1b-276a64152b02
 # Favicons are usually around 48x48.
@@ -74,9 +80,10 @@ logo_path = let
 end
 
 # ╔═╡ cd996076-d3c9-47e3-874a-fc70fa38ad86
-save(logo_path, px_per_unit=240/size);
+save(logo_path, logo; px_per_unit=240/size);
 
 # ╔═╡ Cell order:
+# ╠═a88ccce3-34d3-483f-b313-595bab69ac07
 # ╠═0d7e9e2a-9a1e-11ec-3f58-5938aac102fc
 # ╠═59e351d0-8df4-4016-898e-3c4c6f554d17
 # ╠═91ae0221-d73e-44c5-a672-d7e360937e2e

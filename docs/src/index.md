@@ -28,32 +28,26 @@ and more.
 
 ## Model Basics
 
-Let `Rᵏ` denote `k` random variables.
-In the most basic sense, we define a statistical `model` as an object that can convert $v$ random variables to $w$ random variables.
-This is often called _predicting_, so:
-
-```julia
-function predict(fmodel, data::Rᵛ)::Rʷ
-    ...
-end
-```
-
-where `1 ≤ v`, `1 ≤ w` and `data` satisfies the assumptions of `fmodel`.
-Here, `fmodel` is often called a _fitted_ or a _trained model_.
-To obtain such a model, the model has been fitted on some training data:
+In the most basic sense, we define a statistical `model` as an object that can be fitted to some random variables:
 
 ```julia
 fmodel = fit(model, training_data)
 ```
 
-where `training_data::Rᵛ`.
-This is often called _training a model_.
+This is often called _fitting_ or _training_ a model.
+Such a fitted model can then be applied to new data, often known as _predicting_:
+
+```julia
+predictions = predict(fmodel, data)
+```
+
+where `data` satisfies the assumptions of `fmodel`.
 
 ## Data Definition
 
 This interface makes no assumptions about the datatype.
 It is up to the package who implements the interface to decide what datatypes are allowed although in most cases the [Tables.jl interface](https://juliadata.github.io/Tables.jl/stable/) is the most suitable.
-Note that this isn't mandatory since the Tables interface is not generic enough for statistical models.
+Note that the Tables interface is not suitable for some statistical models.
 For example, for image classifiers, the data cannot easily be contained in a table.
 
 ## Using the Interface

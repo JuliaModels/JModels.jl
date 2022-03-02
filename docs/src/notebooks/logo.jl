@@ -65,6 +65,7 @@ favicon_path = joinpath(pkgdir(JModels), "docs", "src", "assets", "favicon.png")
 # ╔═╡ 3c461c35-d8d4-4dce-8b1b-276a64152b02
 # Favicons are usually around 48x48.
 let
+	mkpath(dirname(favicon_path))
 	save(favicon_path, logo, px_per_unit=48/size)
 	cd(dirname(favicon_path)) do
 		# Documenter.jl wants an ico file.

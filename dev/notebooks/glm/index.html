@@ -11,6 +11,10 @@
         margin-top: 1.4rem !important;
         margin-bottom: 1.4rem !important;
     }
+
+    .code-output {
+        padding: 0.7rem 0.5rem !important;
+    }
 </style>
 
 <!-- PlutoStaticHTML.Begin -->
@@ -78,7 +82,7 @@ end</code></pre>
 
 
 <pre class='language-julia'><code class='language-julia'>model = JModels.fit(GeneralizedLinearModel, data)</code></pre>
-<pre id='var-model' class='documenter-example-output'><code class='code-output'>StatsModels.TableRegressionModel{GeneralizedLinearModel{GLM.GlmResp{Vector{Float64}, Binomial{Float64}, LogitLink}, GLM.DensePredChol{Float64, LinearAlgebra.Cholesky{Float64, Matrix{Float64}}}}, Matrix{Float64}}
+<pre id='var-model' class='code-output documenter-example-output'>StatsModels.TableRegressionModel{GeneralizedLinearModel{GLM.GlmResp{Vector{Float64}, Binomial{Float64}, LogitLink}, GLM.DensePredChol{Float64, LinearAlgebra.Cholesky{Float64, Matrix{Float64}}}}, Matrix{Float64}}
 
 y ~ 1 + x
 
@@ -86,14 +90,14 @@ Coefficients:
 ────────────────────────────────────────────────────────────────────────
                 Coef.  Std. Error      z  Pr(>|z|)  Lower 95%  Upper 95%
 ────────────────────────────────────────────────────────────────────────
-(Intercept)   8.05527     8.62543   0.93    0.3504   -8.85025   24.9608
-x            -3.47723     3.74512  -0.93    0.3532  -10.8175     3.86306
-────────────────────────────────────────────────────────────────────────</code></pre>
+(Intercept)  -5.24316     6.04551  -0.87    0.3858  -17.0921     6.60583
+x             1.95887     2.38844   0.82    0.4121   -2.72239    6.64013
+────────────────────────────────────────────────────────────────────────</pre>
 
 <pre class='language-julia'><code class='language-julia'>JModels.predict(model, data)</code></pre>
-<pre id='var-hash174962' class='documenter-example-output'><code class='code-output'>3-element Vector{Union{Missing, Float64}}:
- 0.9898295023975586
- 0.7504119335046633
- 0.0849885046879842</code></pre>
+<pre id='var-hash174962' class='code-output documenter-example-output'>3-element Vector{Union{Missing, Float64}}:
+ 0.03611418211352498
+ 0.20991848014497355
+ 0.6532721127267466</pre>
 
-<!-- PlutoStaticHTML.End --></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« JModels</a><a class="docs-footer-nextpage" href="../logo/">Logo »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.15 on <span class="colophon-date" title="Monday 11 April 2022 14:51">Monday 11 April 2022</span>. Using Julia version 1.7.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+<!-- PlutoStaticHTML.End --></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« JModels</a><a class="docs-footer-nextpage" href="../logo/">Logo »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.15 on <span class="colophon-date" title="Monday 11 April 2022 14:54">Monday 11 April 2022</span>. Using Julia version 1.7.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

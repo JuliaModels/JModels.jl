@@ -52,10 +52,10 @@
         mt::Type{GeneralizedLinearModel},
         data;
         settings = (;
-			formula=FormulaTerm(term(:y), term(:x)),
+            formula=FormulaTerm(term(:y), term(:x)),
         	family=Binomial(),
-	        link=LogitLink()
-		)
+            link=LogitLink()
+        )
     )
     return glm(settings.formula, data, settings.family, settings.link)
 end</code></pre>
@@ -83,17 +83,17 @@ end</code></pre>
 y ~ 1 + x
 
 Coefficients:
-─────────────────────────────────────────────────────────────────────────
-                 Coef.  Std. Error      z  Pr(>|z|)  Lower 95%  Upper 95%
-─────────────────────────────────────────────────────────────────────────
-(Intercept)  -1.38701      3.23209  -0.43    0.6678   -7.72178    4.94777
-x             0.783669     1.52974   0.51    0.6084   -2.21457    3.78191
-─────────────────────────────────────────────────────────────────────────</code></pre>
+────────────────────────────────────────────────────────────────────────
+                Coef.  Std. Error      z  Pr(>|z|)  Lower 95%  Upper 95%
+────────────────────────────────────────────────────────────────────────
+(Intercept)   8.05527     8.62543   0.93    0.3504   -8.85025   24.9608
+x            -3.47723     3.74512  -0.93    0.3532  -10.8175     3.86306
+────────────────────────────────────────────────────────────────────────</code></pre>
 
 <pre class='language-julia'><code class='language-julia'>JModels.predict(model, data)</code></pre>
 <pre id='var-hash174962' class='documenter-example-output'><code class='code-output'>3-element Vector{Union{Missing, Float64}}:
- 0.35358038743208103
- 0.5449609824478536
- 0.7239219662469182</code></pre>
+ 0.9898295023975586
+ 0.7504119335046633
+ 0.0849885046879842</code></pre>
 
-<!-- PlutoStaticHTML.End --></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« JModels</a><a class="docs-footer-nextpage" href="../logo/">Logo »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.14 on <span class="colophon-date" title="Friday 11 March 2022 18:42">Friday 11 March 2022</span>. Using Julia version 1.7.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+<!-- PlutoStaticHTML.End --></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« JModels</a><a class="docs-footer-nextpage" href="../logo/">Logo »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.15 on <span class="colophon-date" title="Monday 11 April 2022 14:51">Monday 11 April 2022</span>. Using Julia version 1.7.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
